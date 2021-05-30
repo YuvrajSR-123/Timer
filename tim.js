@@ -22,4 +22,4 @@ function fun11()
 		sec--;
 	
 
-}
+} 
