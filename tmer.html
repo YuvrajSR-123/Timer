@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<script type="text/javascript" >
+			function starttime()
+				{
+					er=setInterval("fun11()",1000)
+				}
+				var sec=00;
+				var min=00;
+				var er;
+				function fun11()
+				{
+					
+					if(sec==59)
+					{
+						min++;
+						sec=00;
+					}
+	
+					realtimer.innerHTML=min+":"+sec+" MIN";
+	
+						sec++;
+				}
+				
+				function LAPtime()
+				{
+					a=realtimer.innerHTML;
+					lapp.innerHTML+="LAP : "+"<b>"+a+"<br />";
+				}
+				function ENDtime()
+				{
+					stp.innerHTML+=realtimer.innerHTML;
+					clearInterval(er);
+
+				}
+
+		        </script>
+		        <style type="text/css">
+		        #bttn , #bttn1 , #bttn2
+		        {
+			font-size: 20px;
+		}
+		#lapp
+		{
+			font-size: 50px;
+		}
+		#stp
+		{
+			font-size: 80px;
+			margin:0px auto;
+		}
+		#realtimer{
+			margin:0px auto;
+			text-align: center;
+			
+			width:1200px;
+			height:100px;
+			font-color:red;
+			font-size: 100px;
+		}
+		body{
+			background-image: url(index.jpg);
+		}
+		</style>
+</head>
+<body>
+<div>
+	<button id="bttn">start timer</button>
+	   <script type="text/javascript">
+		 bttn.onclick=function()
+				{
+						starttime();
+				} 
+	   </script> 
+	   <button onclick="LAPtime()" id="bttn1">LAP</button>
+	   <button onclick="ENDtime()" id="bttn2">STOP</button>
+	    
+</div>
+<div id="realtimer"></div>
+<div id="lapp"></div>
+<div id="stp">END TIME IS </div>
+
+</body>
+</html>
